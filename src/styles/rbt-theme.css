@@ -1,0 +1,203 @@
+/* RBT Group Theme Colors */
+:root {
+  /* Cores principais baseadas no sistema RBT */
+  --rbt-primary: #00B4D8; /* Azul turquesa principal */
+  --rbt-primary-light: #90E0EF; /* Azul claro */
+  --rbt-primary-dark: #0077B6; /* Azul escuro */
+  --rbt-secondary: #48CAE4; /* Azul médio */
+  --rbt-accent: #023E8A; /* Azul navy */
+  
+  /* Tons de cinza */
+  --rbt-gray-50: #F8FAFC;
+  --rbt-gray-100: #F1F5F9;
+  --rbt-gray-200: #E2E8F0;
+  --rbt-gray-300: #CBD5E1;
+  --rbt-gray-400: #94A3B8;
+  --rbt-gray-500: #64748B;
+  --rbt-gray-600: #475569;
+  --rbt-gray-700: #334155;
+  --rbt-gray-800: #1E293B;
+  --rbt-gray-900: #0F172A;
+  
+  /* Estados */
+  --rbt-success: #10B981;
+  --rbt-warning: #F59E0B;
+  --rbt-error: #EF4444;
+  --rbt-info: var(--rbt-primary);
+}
+
+/* Aplicação do tema RBT */
+.rbt-theme {
+  /* Sidebar com fundo branco */
+  .rbt-sidebar {
+    background: white;
+    border-right: 1px solid var(--rbt-gray-200);
+  }
+  
+  .rbt-sidebar .menu-item {
+    color: var(--rbt-gray-600);
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 2px 0;
+  }
+  
+  .rbt-sidebar .menu-item:hover {
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--rbt-primary-dark);
+  }
+  
+  .rbt-sidebar .menu-item.active {
+    background: linear-gradient(135deg, var(--rbt-primary) 0%, var(--rbt-secondary) 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 180, 216, 0.3);
+  }
+  
+  .rbt-sidebar .menu-item.active svg {
+    color: white;
+  }
+  
+  /* Header com cor RBT */
+  .rbt-header {
+    background: white;
+    border-bottom: 2px solid var(--rbt-primary-light);
+  }
+  
+  /* Cards com bordas RBT */
+  .rbt-card {
+    border-top: 3px solid var(--rbt-primary);
+    box-shadow: 0 4px 6px -1px rgba(0, 180, 216, 0.1);
+  }
+  
+  /* Botões primários RBT */
+  .rbt-btn-primary {
+    background: linear-gradient(135deg, var(--rbt-primary) 0%, var(--rbt-secondary) 100%);
+    border: none;
+    color: white;
+    transition: all 0.2s ease;
+  }
+  
+  .rbt-btn-primary:hover {
+    background: linear-gradient(135deg, var(--rbt-primary-dark) 0%, var(--rbt-primary) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  }
+  
+  /* Badges com cores RBT */
+  .rbt-badge-primary {
+    background: var(--rbt-primary);
+    color: white;
+  }
+  
+  .rbt-badge-secondary {
+    background: var(--rbt-primary-light);
+    color: var(--rbt-primary-dark);
+  }
+  
+  /* Métricas com cores RBT */
+  .rbt-metric-card {
+    background: linear-gradient(135deg, var(--rbt-primary) 0%, var(--rbt-secondary) 100%);
+    color: white;
+  }
+  
+  .rbt-metric-card .metric-value {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  
+  .rbt-metric-card .metric-label {
+    opacity: 0.9;
+    font-size: 0.875rem;
+  }
+  
+  /* Gráficos com cores RBT */
+  .rbt-chart-primary {
+    fill: var(--rbt-primary);
+  }
+  
+  .rbt-chart-secondary {
+    fill: var(--rbt-secondary);
+  }
+  
+  .rbt-chart-accent {
+    fill: var(--rbt-accent);
+  }
+  
+  /* Status indicators */
+  .rbt-status-success {
+    background: var(--rbt-success);
+  }
+  
+  .rbt-status-warning {
+    background: var(--rbt-warning);
+  }
+  
+  .rbt-status-error {
+    background: var(--rbt-error);
+  }
+  
+  .rbt-status-info {
+    background: var(--rbt-info);
+  }
+  
+  /* Tabelas com tema RBT */
+  .rbt-table-header {
+    background: var(--rbt-gray-50);
+    border-bottom: 2px solid var(--rbt-primary-light);
+  }
+  
+  .rbt-table-row:hover {
+    background: rgba(0, 180, 216, 0.05);
+  }
+  
+  /* Inputs com tema RBT */
+  .rbt-input:focus {
+    border-color: var(--rbt-primary);
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.1);
+  }
+  
+  /* Progress bars */
+  .rbt-progress {
+    background: var(--rbt-gray-200);
+  }
+  
+  .rbt-progress-fill {
+    background: linear-gradient(90deg, var(--rbt-primary) 0%, var(--rbt-secondary) 100%);
+  }
+}
+
+/* Animações RBT */
+@keyframes rbt-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.rbt-pulse {
+  animation: rbt-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes rbt-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rbt-slide-in {
+  animation: rbt-slide-in 0.3s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .rbt-metric-card .metric-value {
+    font-size: 1.5rem;
+  }
+}
+
